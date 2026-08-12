@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CatalogView } from "@/components/shop/CatalogView";
 
 export const Route = createFileRoute("/loja")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    q: typeof search.q === "string" && search.q ? search.q : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { q?: string | undefined } => {
+    const raw = search["q"];
+    return typeof raw === "string" && raw ? { q: raw } : {};
+  },
   head: () => ({
     meta: [
       { title: "Loja — Invictos Calçados" },
@@ -16,7 +17,8 @@ export const Route = createFileRoute("/loja")({
       { property: "og:title", content: "Loja — Invictos Calçados" },
       {
         property: "og:description",
-        content: "Todo o catálogo da Invictos em um só lugar, com entrega para todo o Brasil.",
+        content:
+          "Todo o catálogo da Invictos em um só lugar, com entrega para todo o Brasil.",
       },
       { property: "og:url", content: "/loja" },
     ],
