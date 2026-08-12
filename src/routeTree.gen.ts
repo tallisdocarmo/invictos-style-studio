@@ -10,33 +10,271 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcessoriosRouteImport } from './routes/acessorios'
+import { Route as BolsasRouteImport } from './routes/bolsas'
+import { Route as CalcadosRouteImport } from './routes/calcados'
+import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContaRouteImport } from './routes/conta'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as FemininoRouteImport } from './routes/feminino'
+import { Route as LocalizacaoRouteImport } from './routes/localizacao'
+import { Route as LojaRouteImport } from './routes/loja'
+import { Route as MasculinoRouteImport } from './routes/masculino'
+import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as RoupasRouteImport } from './routes/roupas'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TrocasEDevolucoesRouteImport } from './routes/trocas-e-devolucoes'
+import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcessoriosRoute = AcessoriosRouteImport.update({
+  id: '/acessorios',
+  path: '/acessorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BolsasRoute = BolsasRouteImport.update({
+  id: '/bolsas',
+  path: '/bolsas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalcadosRoute = CalcadosRouteImport.update({
+  id: '/calcados',
+  path: '/calcados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarrinhoRoute = CarrinhoRouteImport.update({
+  id: '/carrinho',
+  path: '/carrinho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContaRoute = ContaRouteImport.update({
+  id: '/conta',
+  path: '/conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FemininoRoute = FemininoRouteImport.update({
+  id: '/feminino',
+  path: '/feminino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalizacaoRoute = LocalizacaoRouteImport.update({
+  id: '/localizacao',
+  path: '/localizacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LojaRoute = LojaRouteImport.update({
+  id: '/loja',
+  path: '/loja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MasculinoRoute = MasculinoRouteImport.update({
+  id: '/masculino',
+  path: '/masculino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertasRoute = OfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoupasRoute = RoupasRouteImport.update({
+  id: '/roupas',
+  path: '/roupas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrocasEDevolucoesRoute = TrocasEDevolucoesRouteImport.update({
+  id: '/trocas-e-devolucoes',
+  path: '/trocas-e-devolucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
+  id: '/produto/$slug',
+  path: '/produto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/bolsas': typeof BolsasRoute
+  '/calcados': typeof CalcadosRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/conta': typeof ContaRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
+  '/feminino': typeof FemininoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/loja': typeof LojaRoute
+  '/masculino': typeof MasculinoRoute
+  '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/roupas': typeof RoupasRoute
+  '/sobre': typeof SobreRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/bolsas': typeof BolsasRoute
+  '/calcados': typeof CalcadosRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/conta': typeof ContaRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
+  '/feminino': typeof FemininoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/loja': typeof LojaRoute
+  '/masculino': typeof MasculinoRoute
+  '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/roupas': typeof RoupasRoute
+  '/sobre': typeof SobreRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/bolsas': typeof BolsasRoute
+  '/calcados': typeof CalcadosRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/conta': typeof ContaRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
+  '/feminino': typeof FemininoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/loja': typeof LojaRoute
+  '/masculino': typeof MasculinoRoute
+  '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/roupas': typeof RoupasRoute
+  '/sobre': typeof SobreRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/acessorios'
+    | '/bolsas'
+    | '/calcados'
+    | '/carrinho'
+    | '/checkout'
+    | '/conta'
+    | '/contato'
+    | '/favoritos'
+    | '/feminino'
+    | '/localizacao'
+    | '/loja'
+    | '/masculino'
+    | '/ofertas'
+    | '/politica-de-privacidade'
+    | '/roupas'
+    | '/sobre'
+    | '/trocas-e-devolucoes'
+    | '/produto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/acessorios'
+    | '/bolsas'
+    | '/calcados'
+    | '/carrinho'
+    | '/checkout'
+    | '/conta'
+    | '/contato'
+    | '/favoritos'
+    | '/feminino'
+    | '/localizacao'
+    | '/loja'
+    | '/masculino'
+    | '/ofertas'
+    | '/politica-de-privacidade'
+    | '/roupas'
+    | '/sobre'
+    | '/trocas-e-devolucoes'
+    | '/produto/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/acessorios'
+    | '/bolsas'
+    | '/calcados'
+    | '/carrinho'
+    | '/checkout'
+    | '/conta'
+    | '/contato'
+    | '/favoritos'
+    | '/feminino'
+    | '/localizacao'
+    | '/loja'
+    | '/masculino'
+    | '/ofertas'
+    | '/politica-de-privacidade'
+    | '/roupas'
+    | '/sobre'
+    | '/trocas-e-devolucoes'
+    | '/produto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcessoriosRoute: typeof AcessoriosRoute
+  BolsasRoute: typeof BolsasRoute
+  CalcadosRoute: typeof CalcadosRoute
+  CarrinhoRoute: typeof CarrinhoRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ContaRoute: typeof ContaRoute
+  ContatoRoute: typeof ContatoRoute
+  FavoritosRoute: typeof FavoritosRoute
+  FemininoRoute: typeof FemininoRoute
+  LocalizacaoRoute: typeof LocalizacaoRoute
+  LojaRoute: typeof LojaRoute
+  MasculinoRoute: typeof MasculinoRoute
+  OfertasRoute: typeof OfertasRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  RoupasRoute: typeof RoupasRoute
+  SobreRoute: typeof SobreRoute
+  TrocasEDevolucoesRoute: typeof TrocasEDevolucoesRoute
+  ProdutoSlugRoute: typeof ProdutoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +286,155 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acessorios': {
+      id: '/acessorios'
+      path: '/acessorios'
+      fullPath: '/acessorios'
+      preLoaderRoute: typeof AcessoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bolsas': {
+      id: '/bolsas'
+      path: '/bolsas'
+      fullPath: '/bolsas'
+      preLoaderRoute: typeof BolsasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calcados': {
+      id: '/calcados'
+      path: '/calcados'
+      fullPath: '/calcados'
+      preLoaderRoute: typeof CalcadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carrinho': {
+      id: '/carrinho'
+      path: '/carrinho'
+      fullPath: '/carrinho'
+      preLoaderRoute: typeof CarrinhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conta': {
+      id: '/conta'
+      path: '/conta'
+      fullPath: '/conta'
+      preLoaderRoute: typeof ContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feminino': {
+      id: '/feminino'
+      path: '/feminino'
+      fullPath: '/feminino'
+      preLoaderRoute: typeof FemininoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/localizacao': {
+      id: '/localizacao'
+      path: '/localizacao'
+      fullPath: '/localizacao'
+      preLoaderRoute: typeof LocalizacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loja': {
+      id: '/loja'
+      path: '/loja'
+      fullPath: '/loja'
+      preLoaderRoute: typeof LojaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/masculino': {
+      id: '/masculino'
+      path: '/masculino'
+      fullPath: '/masculino'
+      preLoaderRoute: typeof MasculinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofertas': {
+      id: '/ofertas'
+      path: '/ofertas'
+      fullPath: '/ofertas'
+      preLoaderRoute: typeof OfertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roupas': {
+      id: '/roupas'
+      path: '/roupas'
+      fullPath: '/roupas'
+      preLoaderRoute: typeof RoupasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trocas-e-devolucoes': {
+      id: '/trocas-e-devolucoes'
+      path: '/trocas-e-devolucoes'
+      fullPath: '/trocas-e-devolucoes'
+      preLoaderRoute: typeof TrocasEDevolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produto/$slug': {
+      id: '/produto/$slug'
+      path: '/produto/$slug'
+      fullPath: '/produto/$slug'
+      preLoaderRoute: typeof ProdutoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcessoriosRoute: AcessoriosRoute,
+  BolsasRoute: BolsasRoute,
+  CalcadosRoute: CalcadosRoute,
+  CarrinhoRoute: CarrinhoRoute,
+  CheckoutRoute: CheckoutRoute,
+  ContaRoute: ContaRoute,
+  ContatoRoute: ContatoRoute,
+  FavoritosRoute: FavoritosRoute,
+  FemininoRoute: FemininoRoute,
+  LocalizacaoRoute: LocalizacaoRoute,
+  LojaRoute: LojaRoute,
+  MasculinoRoute: MasculinoRoute,
+  OfertasRoute: OfertasRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  RoupasRoute: RoupasRoute,
+  SobreRoute: SobreRoute,
+  TrocasEDevolucoesRoute: TrocasEDevolucoesRoute,
+  ProdutoSlugRoute: ProdutoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
