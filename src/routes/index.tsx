@@ -9,14 +9,14 @@ import { StoreLocation } from "@/components/shop/StoreLocation";
 import { buttonClass, Container, Eyebrow, SectionHeading } from "@/components/shop/ui";
 import { getByGender, getFeatured, getNewArrivals } from "@/lib/shop/catalog";
 
-import hero from "@/assets/hero.jpg";
-import ela from "@/assets/editorial-ela.jpg";
-import ele from "@/assets/editorial-ele.jpg";
-import banner from "@/assets/banner-promo.jpg";
-import catCalcados from "@/assets/cat-calcados.jpg";
-import catBolsas from "@/assets/cat-bolsas.jpg";
-import catRoupas from "@/assets/cat-roupas.jpg";
-import catAcessorios from "@/assets/cat-acessorios.jpg";
+const hero = "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop";
+const ela = "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop";
+const ele = "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop";
+const banner = "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop";
+const catCalcados = "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop";
+const catBolsas = "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop";
+const catRoupas = "https://images.unsplash.com/photo-1445205170230-053b830c6050?q=80&w=2071&auto=format&fit=crop";
+const catAcessorios = "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop";
 
 export const Route = createFileRoute("/")({
   head: () => ({
