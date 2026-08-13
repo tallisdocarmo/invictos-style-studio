@@ -10,7 +10,6 @@ import { StoreLocation } from "@/components/shop/StoreLocation";
 import { buttonClass, Container, Eyebrow, SectionHeading } from "@/components/shop/ui";
 import { getByGender, getFeatured, getNewArrivals } from "@/lib/shop/catalog";
 
-const hero = "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop";
 const ela = "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop";
 const ele = "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop";
 const banner = "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop";
