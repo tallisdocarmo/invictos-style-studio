@@ -16,6 +16,7 @@ import { buttonClass, Container, SectionHeading } from "@/components/shop/ui";
 import { cn } from "@/lib/utils";
 import {
   getProductBySlug,
+  getOnSale,
   getRelated,
   productJsonLd,
 } from "@/lib/shop/catalog";
