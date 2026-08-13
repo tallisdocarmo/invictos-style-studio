@@ -14,6 +14,8 @@ export function CatalogView({
   lockedGender,
   onlyOnSale,
   initialSearch,
+  initialCategories,
+  initialOnlyOnSale,
 }: {
   title: string;
   description?: string | undefined;
@@ -21,13 +23,15 @@ export function CatalogView({
   lockedGender?: Gender | undefined;
   onlyOnSale?: boolean | undefined;
   initialSearch?: string | undefined;
+  initialCategories?: string[] | undefined;
+  initialOnlyOnSale?: boolean | undefined;
 }) {
   const [query, setQuery] = useState<CatalogQuery>({
     sort: "relevancia",
     search: initialSearch,
-    categories: lockedCategory ? [lockedCategory] : undefined,
+    categories: lockedCategory ? [lockedCategory] : (initialCategories as any),
     genders: lockedGender ? [lockedGender] : undefined,
-    onlyOnSale: onlyOnSale || undefined,
+    onlyOnSale: onlyOnSale || initialOnlyOnSale || undefined,
   });
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(initialSearch || "");
