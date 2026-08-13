@@ -21,7 +21,10 @@ export const CATEGORIES: {
   name: string;
   path: string;
 }[] = [
-  { slug: "calcados", name: "Calçados", path: "/calcados" },
+  { slug: "masculino", name: "Masculino", path: "/masculino" },
+  { slug: "feminino", name: "Feminino", path: "/feminino" },
+  { slug: "infantil", name: "Infantil", path: "/infantil" },
+  { slug: "calcados", name: "Lançamentos", path: "/loja" },
 ];
 
 export const SORT_OPTIONS: { value: SortOption; label: string }[] = [
