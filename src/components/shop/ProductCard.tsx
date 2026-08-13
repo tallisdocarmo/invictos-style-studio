@@ -14,9 +14,9 @@ export function ProductCard({
   priority?: boolean;
 }) {
   const { addToCart, toggleFavorite, isFavorite } = useShop();
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const parcel = installments(product.price);
   const cover = product.images[0];
-  const defaultSize = product.sizes[0] ?? "Único";
   const favorite = isFavorite(product.slug);
   const soldOut = product.stock_status === "outofstock";
 

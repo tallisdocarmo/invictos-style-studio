@@ -17,6 +17,7 @@ import { Route as ContaRouteImport } from './routes/conta'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as FemininoRouteImport } from './routes/feminino'
+import { Route as InfantilRouteImport } from './routes/infantil'
 import { Route as LocalizacaoRouteImport } from './routes/localizacao'
 import { Route as LojaRouteImport } from './routes/loja'
 import { Route as MasculinoRouteImport } from './routes/masculino'
@@ -64,6 +65,11 @@ const FavoritosRoute = FavoritosRouteImport.update({
 const FemininoRoute = FemininoRouteImport.update({
   id: '/feminino',
   path: '/feminino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfantilRoute = InfantilRouteImport.update({
+  id: '/infantil',
+  path: '/infantil',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocalizacaoRoute = LocalizacaoRouteImport.update({
@@ -116,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/favoritos': typeof FavoritosRoute
   '/feminino': typeof FemininoRoute
+  '/infantil': typeof InfantilRoute
   '/localizacao': typeof LocalizacaoRoute
   '/loja': typeof LojaRoute
   '/masculino': typeof MasculinoRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/favoritos': typeof FavoritosRoute
   '/feminino': typeof FemininoRoute
+  '/infantil': typeof InfantilRoute
   '/localizacao': typeof LocalizacaoRoute
   '/loja': typeof LojaRoute
   '/masculino': typeof MasculinoRoute
@@ -153,6 +161,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/favoritos': typeof FavoritosRoute
   '/feminino': typeof FemininoRoute
+  '/infantil': typeof InfantilRoute
   '/localizacao': typeof LocalizacaoRoute
   '/loja': typeof LojaRoute
   '/masculino': typeof MasculinoRoute
@@ -173,6 +182,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/favoritos'
     | '/feminino'
+    | '/infantil'
     | '/localizacao'
     | '/loja'
     | '/masculino'
@@ -191,6 +201,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/favoritos'
     | '/feminino'
+    | '/infantil'
     | '/localizacao'
     | '/loja'
     | '/masculino'
@@ -209,6 +220,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/favoritos'
     | '/feminino'
+    | '/infantil'
     | '/localizacao'
     | '/loja'
     | '/masculino'
@@ -228,6 +240,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   FavoritosRoute: typeof FavoritosRoute
   FemininoRoute: typeof FemininoRoute
+  InfantilRoute: typeof InfantilRoute
   LocalizacaoRoute: typeof LocalizacaoRoute
   LojaRoute: typeof LojaRoute
   MasculinoRoute: typeof MasculinoRoute
@@ -294,6 +307,13 @@ declare module '@tanstack/react-router' {
       path: '/feminino'
       fullPath: '/feminino'
       preLoaderRoute: typeof FemininoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infantil': {
+      id: '/infantil'
+      path: '/infantil'
+      fullPath: '/infantil'
+      preLoaderRoute: typeof InfantilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/localizacao': {
@@ -364,6 +384,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   FavoritosRoute: FavoritosRoute,
   FemininoRoute: FemininoRoute,
+  InfantilRoute: InfantilRoute,
   LocalizacaoRoute: LocalizacaoRoute,
   LojaRoute: LojaRoute,
   MasculinoRoute: MasculinoRoute,
