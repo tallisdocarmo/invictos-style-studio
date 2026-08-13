@@ -19,9 +19,6 @@ const COLUMNS: { title: string; links: { label: string; to: NonNullable<LinkProp
       { label: "Feminino", to: "/feminino" },
       { label: "Masculino", to: "/masculino" },
       { label: "Calçados", to: "/calcados" },
-      { label: "Bolsas", to: "/bolsas" },
-      { label: "Roupas", to: "/roupas" },
-      { label: "Acessórios", to: "/acessorios" },
     ],
   },
   {
@@ -43,7 +40,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo size="lg" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-foreground/60">
-              Moda que combina com você. Calçados, bolsas, roupas e acessórios em Nova
+              Moda que combina com você. Sapatos e sandálias em Nova
               Soure — Bahia, e entrega para todo o Brasil.
             </p>
             <p className="mt-6 text-sm text-ink-foreground/60">

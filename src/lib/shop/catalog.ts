@@ -22,9 +22,6 @@ export const CATEGORIES: {
   path: string;
 }[] = [
   { slug: "calcados", name: "Calçados", path: "/calcados" },
-  { slug: "bolsas", name: "Bolsas", path: "/bolsas" },
-  { slug: "roupas", name: "Roupas", path: "/roupas" },
-  { slug: "acessorios", name: "Acessórios", path: "/acessorios" },
 ];
 
 export const SORT_OPTIONS: { value: SortOption; label: string }[] = [

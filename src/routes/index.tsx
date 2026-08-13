@@ -25,13 +25,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
+          "Sapatos e sandálias femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
       },
       { property: "og:title", content: "Invictos Calçados — Moda que combina com você" },
       {
         property: "og:description",
         content:
-          "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
+          "Sapatos e sandálias femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -67,7 +67,7 @@ function Home() {
               Sua marca.
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-foreground/70 md:text-base">
-              Calçados, bolsas, roupas e acessórios para transformar cada detalhe do seu
+              Sapatos e sandálias para transformar cada detalhe do seu
               look.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
@@ -94,14 +94,6 @@ function Home() {
             <CategoryCard title="Feminino" to="/feminino" image={ela} alt="Coleção feminina" />
             <CategoryCard title="Masculino" to="/masculino" image={ele} alt="Coleção masculina" />
             <CategoryCard title="Calçados" to="/calcados" image={catCalcados} alt="Calçados" />
-            <CategoryCard title="Bolsas" to="/bolsas" image={catBolsas} alt="Bolsas" />
-            <CategoryCard title="Roupas" to="/roupas" image={catRoupas} alt="Roupas" />
-            <CategoryCard
-              title="Acessórios"
-              to="/acessorios"
-              image={catAcessorios}
-              alt="Acessórios"
-            />
           </div>
         </Container>
       </section>
@@ -141,7 +133,7 @@ function Home() {
                 Detalhes que fazem diferença.
               </h2>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Encontre bolsas, calçados, roupas e acessórios para acompanhar seu estilo.
+                Encontre sapatos e sandálias para acompanhar seu estilo.
               </p>
               <Link to="/feminino" className={buttonClass("dark", "mt-8")}>
                 Ver coleção feminina
