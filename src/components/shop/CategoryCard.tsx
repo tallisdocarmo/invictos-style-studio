@@ -10,7 +10,7 @@ export function CategoryCard({
   large = false,
 }: {
   title: string;
-  to: LinkProps["to"];
+  to: NonNullable<LinkProps["to"]>;
   image: string;
   alt: string;
   large?: boolean;
