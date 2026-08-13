@@ -1,10 +1,11 @@
-import { SlidersHorizontal } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { searchCatalog, SORT_OPTIONS } from "@/lib/shop/catalog";
 import type { CatalogQuery, CategorySlug, Gender, SortOption } from "@/lib/shop/types";
 import { FilterSidebar } from "./FilterSidebar";
 import { ProductGrid } from "./ProductGrid";
 import { Container } from "./ui";
+import { cn } from "@/lib/utils";
 
 export function CatalogView({
   title,
@@ -29,6 +30,22 @@ export function CatalogView({
     onlyOnSale: onlyOnSale || undefined,
   });
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(initialSearch || "");
+
+  // Debounce search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setQuery((prev) => ({ ...prev, search: searchTerm || undefined }));
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  // Sync internal search state if initialSearch changes
+  useEffect(() => {
+    if (initialSearch !== undefined) {
+      setSearchTerm(initialSearch);
+    }
+  }, [initialSearch]);
 
   const effective = useMemo<CatalogQuery>(
     () => ({
@@ -62,6 +79,28 @@ export function CatalogView({
       </div>
 
       <Container className="pt-8">
+        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="relative flex-1 max-w-xl">
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="O que você está procurando?"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full bg-card border border-border px-11 py-3.5 text-sm text-ink outline-none transition-all focus:border-gold focus:ring-1 focus:ring-gold/20"
+            />
+            {searchTerm ? (
+              <button
+                type="button"
+                onClick={() => setSearchTerm("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-ink"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            ) : null}
+          </div>
+        </div>
+
         <div className="flex flex-col gap-10 lg:flex-row">
           <div className="hidden w-64 shrink-0 lg:block">
             <FilterSidebar
