@@ -2,20 +2,31 @@ import { Instagram } from "lucide-react";
 import { STORE_INFO } from "@/lib/shop/whatsapp";
 import { Container, SectionHeading } from "./ui";
 
-import ela from "@/assets/editorial-ela.jpg";
-import ele from "@/assets/editorial-ele.jpg";
-import bolsa from "@/assets/p-bolsa-caramelo.jpg";
-import tenis from "@/assets/p-tenis-branco.jpg";
-import relogio from "@/assets/p-relogio.jpg";
-import scarpin from "@/assets/p-scarpin.jpg";
-
 const POSTS = [
-  { src: ela, alt: "Look feminino com bolsa de couro" },
-  { src: tenis, alt: "Tênis branco em destaque" },
-  { src: bolsa, alt: "Bolsa shopper caramelo" },
-  { src: ele, alt: "Look masculino minimalista" },
-  { src: scarpin, alt: "Scarpin nude clássico" },
-  { src: relogio, alt: "Relógio dourado" },
+  { 
+    src: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop", 
+    alt: "Look feminino com bolsa de couro" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop", 
+    alt: "Tênis branco em destaque" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop", 
+    alt: "Bolsa shopper caramelo" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop", 
+    alt: "Look masculino minimalista" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2080&auto=format&fit=crop", 
+    alt: "Scarpin nude clássico" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=2099&auto=format&fit=crop", 
+    alt: "Relógio dourado" 
+  },
 ];
 
 export function InstagramGrid() {
