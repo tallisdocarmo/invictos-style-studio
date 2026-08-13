@@ -8,7 +8,7 @@ export const Route = createFileRoute("/masculino")({
       {
         name: "description",
         content:
-          "Coleção masculina da Invictos: tênis, mocassins, camisetas, camisas e acessórios.",
+          "Coleção masculina da Invictos: tênis, mocassins e sapatos casuais.",
       },
       { property: "og:title", content: "Masculino — Invictos Calçados" },
       {
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/masculino")({
   component: () => (
     <CatalogView
       title="Masculino"
-      description="Estilo que acompanha você. Peças sóbrias e confortáveis para o dia inteiro."
+      description="Estilo que acompanha você. Sapatos e sandálias prontos para o dia inteiro."
       lockedGender="masculino"
     />
   ),
