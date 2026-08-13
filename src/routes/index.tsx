@@ -49,38 +49,8 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-ink">
-        <img
-          src={hero}
-          alt="Modelos vestindo peças da coleção Invictos Calçados"
-          width={1920}
-          height={1088}
-          className="h-[70vh] min-h-[460px] w-full object-cover object-right md:h-[82vh]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent" />
-        <Container className="absolute inset-0 flex items-center">
-          <div className="max-w-lg">
-            <Eyebrow>Coleção 2026</Eyebrow>
-            <h1 className="mt-6 font-display text-[2.75rem] leading-[1.05] text-ink-foreground md:text-[4.25rem]">
-              Seu estilo.
-              <br />
-              Sua marca.
-            </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-foreground/70 md:text-base">
-              Sapatos e sandálias para transformar cada detalhe do seu
-              look.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/loja" className={buttonClass("gold")}>
-                Comprar agora
-              </Link>
-              <Link to="/localizacao" className={buttonClass("outlineLight")}>
-                Conheça a loja
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HeroCarousel />
+
 
       {/* CATEGORIAS */}
       <section className="py-16 md:py-24">
