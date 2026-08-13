@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Heart, ShoppingBag } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { discountPercent, formatPrice, installments } from "@/lib/shop/format";
@@ -22,9 +23,10 @@ export function ProductCard({
 
   function quickAdd() {
     if (soldOut) return;
-    addToCart(product.slug, defaultSize, 1);
+    const size = selectedSize || product.sizes[0] || "Único";
+    addToCart(product.slug, size, 1);
     toast.success("Produto adicionado", {
-      description: `${product.name} — tam. ${defaultSize}`,
+      description: `${product.name} — tam. ${size}`,
     });
   }
 
@@ -100,21 +102,44 @@ export function ProductCard({
             {product.name}
           </Link>
         </h3>
-        <div className="mt-1 flex items-baseline gap-2">
-          {product.sale_price ? (
-            <span className="text-xs text-muted-foreground line-through">
-              {formatPrice(product.regular_price)}
+
+        {!soldOut && product.sizes.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {product.sizes.map((size) => (
+              <button
+                key={size}
+                type="button"
+                onClick={() => setSelectedSize(size)}
+                className={cn(
+                  "flex h-7 min-w-[1.75rem] items-center justify-center border text-[0.65rem] transition-colors",
+                  selectedSize === size
+                    ? "border-ink bg-ink text-ink-foreground"
+                    : "border-border bg-card text-ink hover:border-ink",
+                )}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-auto pt-3">
+          <div className="flex items-baseline gap-2">
+            {product.sale_price ? (
+              <span className="text-xs text-muted-foreground line-through">
+                {formatPrice(product.regular_price)}
+              </span>
+            ) : null}
+            <span className="text-base font-semibold text-ink">
+              {formatPrice(product.price)}
+            </span>
+          </div>
+          {parcel ? (
+            <span className="text-xs text-muted-foreground">
+              ou {parcel.times}x de {formatPrice(parcel.value)}
             </span>
           ) : null}
-          <span className="text-base font-semibold text-ink">
-            {formatPrice(product.price)}
-          </span>
         </div>
-        {parcel ? (
-          <span className="text-xs text-muted-foreground">
-            ou {parcel.times}x de {formatPrice(parcel.value)}
-          </span>
-        ) : null}
       </div>
     </article>
   );
