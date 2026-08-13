@@ -164,12 +164,13 @@ const generateSeeds = (): Seed[] => {
   for (let i = 0; i < 30; i++) {
     const base = baseProducts[i % baseProducts.length];
     if (base) {
+      const createdAt = new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0];
       result.push({
         ...base,
         name: `${base.name} ${i + 1}`,
         slug: `${base.slug}-${i + 1}`,
         sku: `INV-${i + 100}`,
-        created_at: new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0],
+        created_at: createdAt ?? "2026-08-01",
         best_seller: Math.floor(Math.random() * 100),
       });
     }
