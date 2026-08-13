@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Benefits } from "@/components/shop/Benefits";
 import { CategoryCard } from "@/components/shop/CategoryCard";
+import { HeroCarousel } from "@/components/shop/HeroCarousel";
 import { InstagramGrid } from "@/components/shop/InstagramGrid";
 import { Newsletter } from "@/components/shop/Newsletter";
 import { ProductGrid } from "@/components/shop/ProductGrid";
