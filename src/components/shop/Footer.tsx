@@ -19,9 +19,6 @@ const COLUMNS: { title: string; links: { label: string; to: NonNullable<LinkProp
       { label: "Feminino", to: "/feminino" },
       { label: "Masculino", to: "/masculino" },
       { label: "Calçados", to: "/calcados" },
-      { label: "Bolsas", to: "/bolsas" },
-      { label: "Roupas", to: "/roupas" },
-      { label: "Acessórios", to: "/acessorios" },
     ],
   },
   {

@@ -94,14 +94,6 @@ function Home() {
             <CategoryCard title="Feminino" to="/feminino" image={ela} alt="Coleção feminina" />
             <CategoryCard title="Masculino" to="/masculino" image={ele} alt="Coleção masculina" />
             <CategoryCard title="Calçados" to="/calcados" image={catCalcados} alt="Calçados" />
-            <CategoryCard title="Bolsas" to="/bolsas" image={catBolsas} alt="Bolsas" />
-            <CategoryCard title="Roupas" to="/roupas" image={catRoupas} alt="Roupas" />
-            <CategoryCard
-              title="Acessórios"
-              to="/acessorios"
-              image={catAcessorios}
-              alt="Acessórios"
-            />
           </div>
         </Container>
       </section>
