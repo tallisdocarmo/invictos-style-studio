@@ -32,12 +32,14 @@ export const Route = createFileRoute("/loja")({
 });
 
 function LojaPage() {
-  const { q } = Route.useSearch();
+  const { q, categories, onlyOnSale } = Route.useSearch();
   return (
     <CatalogView
       title="Loja"
       description="Todo o catálogo da Invictos: sapatos e sandálias."
       initialSearch={q}
+      initialCategories={categories}
+      initialOnlyOnSale={onlyOnSale}
     />
   );
 }
