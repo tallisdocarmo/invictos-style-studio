@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buttonClass, Container, Eyebrow } from "@/components/shop/ui";
 import { StoreLocation } from "@/components/shop/StoreLocation";
-import ela from "@/assets/editorial-ela.jpg";
+
+const ela = "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1200&auto=format&fit=crop";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
