@@ -33,6 +33,8 @@ export function CatalogView({
     genders: lockedGender ? [lockedGender] : undefined,
     onlyOnSale: onlyOnSale || initialOnlyOnSale || undefined,
   });
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 12;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(initialSearch || "");
 
@@ -62,7 +64,18 @@ export function CatalogView({
     [query, lockedCategory, lockedGender, onlyOnSale, initialSearch],
   );
 
-  const products = useMemo(() => searchCatalog(effective), [effective]);
+  const allProducts = useMemo(() => searchCatalog(effective), [effective]);
+  const totalPages = Math.ceil(allProducts.length / productsPerPage);
+
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * productsPerPage;
+    return allProducts.slice(start, start + productsPerPage);
+  }, [allProducts, currentPage, productsPerPage]);
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [effective]);
 
   return (
     <div className="pb-20">
@@ -118,8 +131,8 @@ export function CatalogView({
           <div className="min-w-0 flex-1">
             <div className="mb-8 flex items-center justify-between gap-4 border-b border-border pb-4">
               <p className="text-xs text-muted-foreground">
-                {products.length}{" "}
-                {products.length === 1 ? "produto" : "produtos"}
+                {allProducts.length}{" "}
+                {allProducts.length === 1 ? "produto" : "produtos"}
               </p>
               <div className="flex items-center gap-3">
                 <button
@@ -151,7 +164,84 @@ export function CatalogView({
               </div>
             </div>
 
-            <ProductGrid products={products} />
+            <ProductGrid products={paginatedProducts} />
+
+            {totalPages > 1 ? (
+              <div className="mt-16 flex items-center justify-center gap-2 border-t border-border pt-10">
+                <button
+                  type="button"
+                  disabled={currentPage === 1}
+                  onClick={() => {
+                    setCurrentPage((p) => Math.max(1, p - 1));
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="flex h-10 w-10 items-center justify-center border border-border text-ink transition-colors hover:border-gold disabled:opacity-30"
+                >
+                  <span className="sr-only">Anterior</span>
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+
+                {Array.from({ length: totalPages }).map((_, i) => {
+                  const p = i + 1;
+                  const isCurrent = p === currentPage;
+                  return (
+                    <button
+                      key={p}
+                      type="button"
+                      onClick={() => {
+                        setCurrentPage(p);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className={cn(
+                        "flex h-10 w-10 items-center justify-center border text-sm transition-all",
+                        isCurrent
+                          ? "border-gold bg-gold text-white"
+                          : "border-border text-ink hover:border-gold",
+                      )}
+                    >
+                      {p}
+                    </button>
+                  );
+                })}
+
+                <button
+                  type="button"
+                  disabled={currentPage === totalPages}
+                  onClick={() => {
+                    setCurrentPage((p) => Math.min(totalPages, p + 1));
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="flex h-10 w-10 items-center justify-center border border-border text-ink transition-colors hover:border-gold disabled:opacity-30"
+                >
+                  <span className="sr-only">Próxima</span>
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ) : null}
           </div>
         </div>
       </Container>
@@ -177,7 +267,7 @@ export function CatalogView({
               onClick={() => setDrawerOpen(false)}
               className="label-sm mt-8 w-full bg-ink py-4 text-ink-foreground"
             >
-              Ver {products.length} produtos
+              Ver {allProducts.length} produtos
             </button>
           </div>
         </div>
