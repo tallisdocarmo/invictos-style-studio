@@ -12,7 +12,7 @@ export const Route = createFileRoute("/loja")({
       {
         name: "description",
         content:
-          "Catálogo completo da Invictos Calçados: calçados, bolsas, roupas e acessórios com filtros por marca, tamanho, cor e preço.",
+          "Catálogo completo da Invictos Calçados: sapatos e sandálias com filtros por marca, tamanho, cor e preço.",
       },
       { property: "og:title", content: "Loja — Invictos Calçados" },
       {
@@ -32,7 +32,7 @@ function LojaPage() {
   return (
     <CatalogView
       title="Loja"
-      description="Todo o catálogo da Invictos: calçados, bolsas, roupas e acessórios."
+      description="Todo o catálogo da Invictos: sapatos e sandálias."
       initialSearch={q}
     />
   );
