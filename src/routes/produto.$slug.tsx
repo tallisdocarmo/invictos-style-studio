@@ -401,10 +401,35 @@ function ProductPage() {
         </Container>
       </section>
 
+      <section className="border-t border-border py-16">
+        <Container>
+          <SectionHeading eyebrow="Veja também" title="Ofertas que você pode gostar" />
+          <ProductGrid products={getOnSale(4)} className="mt-10" />
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/loja"
+              search={{ onlyOnSale: true }}
+              className="label-xs border-b border-gold pb-1 text-[0.6rem] text-gold transition-colors hover:text-ink hover:border-ink"
+            >
+              Ver todas as ofertas
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-16">
         <Container>
           <SectionHeading eyebrow="Combina com" title="Produtos relacionados" />
           <ProductGrid products={related} className="mt-10" />
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/loja"
+              search={{ categories: product.categories }}
+              className="label-xs border-b border-gold pb-1 text-[0.6rem] text-gold transition-colors hover:text-ink hover:border-ink"
+            >
+              Ver mais do mesmo estilo
+            </Link>
+          </div>
         </Container>
       </section>
     </>
