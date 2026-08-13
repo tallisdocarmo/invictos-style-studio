@@ -1,12 +1,12 @@
 // ============= Full file contents =============
-import type { Product, ProductImage, CategorySlug, Gender, SizeEquivalence, Review } from "./types";
+import type { Product, ProductImage, CategorySlug, Gender, ProductReview } from "./types";
 
 const img = (id: string) => `https://images.unsplash.com/photo-${id}?q=80&w=800&auto=format&fit=crop`;
 
 const SIZES_FEM = ["34", "35", "36", "37", "38", "39"];
 const SIZES_MASC = ["38", "39", "40", "41", "42", "43"];
 
-const CHART_FEM: SizeEquivalence[] = [
+const CHART_FEM = [
   { size: "34", equivalence: "22,0 cm" },
   { size: "35", equivalence: "22,8 cm" },
   { size: "36", equivalence: "23,5 cm" },
@@ -15,7 +15,7 @@ const CHART_FEM: SizeEquivalence[] = [
   { size: "39", equivalence: "25,8 cm" },
 ];
 
-const CHART_MASC: SizeEquivalence[] = [
+const CHART_MASC = [
   { size: "38", equivalence: "24,8 cm" },
   { size: "39", equivalence: "25,5 cm" },
   { size: "40", equivalence: "26,2 cm" },
@@ -163,14 +163,16 @@ const generateSeeds = (): Seed[] => {
   const result: Seed[] = [];
   for (let i = 0; i < 30; i++) {
     const base = baseProducts[i % baseProducts.length];
-    result.push({
-      ...base,
-      name: `${base.name} ${i + 1}`,
-      slug: `${base.slug}-${i + 1}`,
-      sku: `INV-${i + 100}`,
-      created_at: new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0],
-      best_seller: Math.floor(Math.random() * 100),
-    });
+    if (base) {
+      result.push({
+        ...base,
+        name: `${base.name} ${i + 1}`,
+        slug: `${base.slug}-${i + 1}`,
+        sku: `INV-${i + 100}`,
+        created_at: new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0],
+        best_seller: Math.floor(Math.random() * 100),
+      });
+    }
   }
   return result;
 };
