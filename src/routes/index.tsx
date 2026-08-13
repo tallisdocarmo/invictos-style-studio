@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Benefits } from "@/components/shop/Benefits";
 import { CategoryCard } from "@/components/shop/CategoryCard";
+import { HeroCarousel } from "@/components/shop/HeroCarousel";
 import { InstagramGrid } from "@/components/shop/InstagramGrid";
 import { Newsletter } from "@/components/shop/Newsletter";
 import { ProductGrid } from "@/components/shop/ProductGrid";
@@ -9,7 +10,6 @@ import { StoreLocation } from "@/components/shop/StoreLocation";
 import { buttonClass, Container, Eyebrow, SectionHeading } from "@/components/shop/ui";
 import { getByGender, getFeatured, getNewArrivals } from "@/lib/shop/catalog";
 
-const hero = "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop";
 const ela = "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop";
 const ele = "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop";
 const banner = "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop";
@@ -49,38 +49,8 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-ink">
-        <img
-          src={hero}
-          alt="Modelos vestindo peças da coleção Invictos Calçados"
-          width={1920}
-          height={1088}
-          className="h-[70vh] min-h-[460px] w-full object-cover object-right md:h-[82vh]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent" />
-        <Container className="absolute inset-0 flex items-center">
-          <div className="max-w-lg">
-            <Eyebrow>Coleção 2026</Eyebrow>
-            <h1 className="mt-6 font-display text-[2.75rem] leading-[1.05] text-ink-foreground md:text-[4.25rem]">
-              Seu estilo.
-              <br />
-              Sua marca.
-            </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-foreground/70 md:text-base">
-              Sapatos e sandálias para transformar cada detalhe do seu
-              look.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/loja" className={buttonClass("gold")}>
-                Comprar agora
-              </Link>
-              <Link to="/localizacao" className={buttonClass("outlineLight")}>
-                Conheça a loja
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HeroCarousel />
+
 
       {/* CATEGORIAS */}
       <section className="py-16 md:py-24">
