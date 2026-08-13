@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Seu estilo, sua marca. Calçados, bolsas, roupas e acessórios com entrega para todo o Brasil.",
+          "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
       },
       { property: "og:url", content: "/" },
     ],

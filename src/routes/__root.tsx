@@ -80,11 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Calçados, bolsas, roupas e acessórios femininos e masculinos. Loja em Nova Soure — BA e entrega para todo o Brasil.",
+          "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA.",
       },
       { property: "og:site_name", content: "Invictos Calçados" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Invictos Calçados — Moda que combina com você" },
+      { name: "twitter:title", content: "Invictos Calçados — Moda que combina com você" },
+      { property: "og:description", content: "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA." },
+      { name: "twitter:description", content: "Calçados, bolsas, roupas e acessórios femininos e masculinos na Invictos Calçados. Compre online com entrega para todo o Brasil ou visite nossa loja em Nova Soure — BA." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34b5623b6fae92b04b8476c2c2d1d11f/id-preview-a189b735--404e48e2-c8df-4cca-b497-04239f2673ee.lovable.app-1786623455046.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34b5623b6fae92b04b8476c2c2d1d11f/id-preview-a189b735--404e48e2-c8df-4cca-b497-04239f2673ee.lovable.app-1786623455046.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
