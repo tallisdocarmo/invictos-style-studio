@@ -90,10 +90,11 @@ function Home() {
             title="Encontre seu estilo"
             description="Navegue pelas seleções da Invictos e monte o look completo."
           />
-          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-4">
             <CategoryCard title="Feminino" to="/feminino" image={ela} alt="Coleção feminina" />
             <CategoryCard title="Masculino" to="/masculino" image={ele} alt="Coleção masculina" />
-            <CategoryCard title="Calçados" to="/calcados" image={catCalcados} alt="Calçados" />
+            <CategoryCard title="Infantil" to="/infantil" image={catCalcados} alt="Coleção infantil" />
+            <CategoryCard title="Lançamentos" to="/loja" image={banner} alt="Lançamentos" />
           </div>
         </Container>
       </section>

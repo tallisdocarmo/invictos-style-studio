@@ -10,8 +10,8 @@ import { Container } from "./ui";
 const NAV = [
   { label: "Feminino", to: "/feminino" },
   { label: "Masculino", to: "/masculino" },
-  { label: "Calçados", to: "/calcados" },
-  { label: "Ofertas", to: "/ofertas" },
+  { label: "Infantil", to: "/infantil" },
+  { label: "Lançamentos", to: "/loja" },
 ] as const;
 
 export function Header() {
@@ -71,7 +71,7 @@ export function Header() {
                 to={item.to}
                 className={cn(
                   "label-xs py-2 text-ink-foreground/80 transition-colors hover:text-gold",
-                  item.label === "Ofertas" && "text-gold",
+                  item.label === "Lançamentos" && "text-gold",
                 )}
                 activeProps={{ className: "text-gold" }}
               >
