@@ -1,12 +1,12 @@
 // ============= Full file contents =============
-import type { Product } from "./types";
+import type { Product, ProductImage, CategorySlug, Gender, SizeEquivalence, Review } from "./types";
 
 const img = (id: string) => `https://images.unsplash.com/photo-${id}?q=80&w=800&auto=format&fit=crop`;
 
 const SIZES_FEM = ["34", "35", "36", "37", "38", "39"];
 const SIZES_MASC = ["38", "39", "40", "41", "42", "43"];
 
-const CHART_FEM = [
+const CHART_FEM: SizeEquivalence[] = [
   { size: "34", equivalence: "22,0 cm" },
   { size: "35", equivalence: "22,8 cm" },
   { size: "36", equivalence: "23,5 cm" },
@@ -15,7 +15,7 @@ const CHART_FEM = [
   { size: "39", equivalence: "25,8 cm" },
 ];
 
-const CHART_MASC = [
+const CHART_MASC: SizeEquivalence[] = [
   { size: "38", equivalence: "24,8 cm" },
   { size: "39", equivalence: "25,5 cm" },
   { size: "40", equivalence: "26,2 cm" },
@@ -159,17 +159,23 @@ const baseProducts: Seed[] = [
   },
 ];
 
-const seeds: Seed[] = Array.from({ length: 30 }).map((_, i) => {
-  const base = baseProducts[i % baseProducts.length];
-  return {
-    ...base,
-    name: `${base.name} ${i + 1}`,
-    slug: `${base.slug}-${i + 1}`,
-    sku: `INV-${i + 100}`,
-    created_at: new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0],
-    best_seller: Math.floor(Math.random() * 100),
-  };
-});
+const generateSeeds = (): Seed[] => {
+  const result: Seed[] = [];
+  for (let i = 0; i < 30; i++) {
+    const base = baseProducts[i % baseProducts.length];
+    result.push({
+      ...base,
+      name: `${base.name} ${i + 1}`,
+      slug: `${base.slug}-${i + 1}`,
+      sku: `INV-${i + 100}`,
+      created_at: new Date(2026, 6, (i % 25) + 1).toISOString().split('T')[0],
+      best_seller: Math.floor(Math.random() * 100),
+    });
+  }
+  return result;
+};
+
+const seeds = generateSeeds();
 
 export const MOCK_PRODUCTS: Product[] = seeds.map((seed, index) => ({
   ...seed,
