@@ -1,11 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
 import { CatalogView } from "@/components/shop/CatalogView";
 
+const lojaSearchSchema = z.object({
+  q: z.string().optional(),
+  categories: z.array(z.string()).optional(),
+  onlyOnSale: z.boolean().optional(),
+});
+
 export const Route = createFileRoute("/loja")({
-  validateSearch: (search: Record<string, unknown>): { q?: string | undefined } => {
-    const raw = search["q"];
-    return typeof raw === "string" && raw ? { q: raw } : {};
-  },
+  validateSearch: (search) => lojaSearchSchema.parse(search),
   head: () => ({
     meta: [
       { title: "Loja — Invictos Calçados" },
