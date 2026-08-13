@@ -10,8 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AcessoriosRouteImport } from './routes/acessorios'
-import { Route as BolsasRouteImport } from './routes/bolsas'
 import { Route as CalcadosRouteImport } from './routes/calcados'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
 import { Route as CheckoutRouteImport } from './routes/checkout'
@@ -24,7 +22,6 @@ import { Route as LojaRouteImport } from './routes/loja'
 import { Route as MasculinoRouteImport } from './routes/masculino'
 import { Route as OfertasRouteImport } from './routes/ofertas'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
-import { Route as RoupasRouteImport } from './routes/roupas'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TrocasEDevolucoesRouteImport } from './routes/trocas-e-devolucoes'
 import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
@@ -32,16 +29,6 @@ import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AcessoriosRoute = AcessoriosRouteImport.update({
-  id: '/acessorios',
-  path: '/acessorios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BolsasRoute = BolsasRouteImport.update({
-  id: '/bolsas',
-  path: '/bolsas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalcadosRoute = CalcadosRouteImport.update({
@@ -104,11 +91,6 @@ const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RoupasRoute = RoupasRouteImport.update({
-  id: '/roupas',
-  path: '/roupas',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -127,8 +109,6 @@ const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/acessorios': typeof AcessoriosRoute
-  '/bolsas': typeof BolsasRoute
   '/calcados': typeof CalcadosRoute
   '/carrinho': typeof CarrinhoRoute
   '/checkout': typeof CheckoutRoute
@@ -141,15 +121,12 @@ export interface FileRoutesByFullPath {
   '/masculino': typeof MasculinoRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
-  '/roupas': typeof RoupasRoute
   '/sobre': typeof SobreRoute
   '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/acessorios': typeof AcessoriosRoute
-  '/bolsas': typeof BolsasRoute
   '/calcados': typeof CalcadosRoute
   '/carrinho': typeof CarrinhoRoute
   '/checkout': typeof CheckoutRoute
@@ -162,7 +139,6 @@ export interface FileRoutesByTo {
   '/masculino': typeof MasculinoRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
-  '/roupas': typeof RoupasRoute
   '/sobre': typeof SobreRoute
   '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -170,8 +146,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/acessorios': typeof AcessoriosRoute
-  '/bolsas': typeof BolsasRoute
   '/calcados': typeof CalcadosRoute
   '/carrinho': typeof CarrinhoRoute
   '/checkout': typeof CheckoutRoute
@@ -184,7 +158,6 @@ export interface FileRoutesById {
   '/masculino': typeof MasculinoRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
-  '/roupas': typeof RoupasRoute
   '/sobre': typeof SobreRoute
   '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -193,8 +166,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/acessorios'
-    | '/bolsas'
     | '/calcados'
     | '/carrinho'
     | '/checkout'
@@ -207,15 +178,12 @@ export interface FileRouteTypes {
     | '/masculino'
     | '/ofertas'
     | '/politica-de-privacidade'
-    | '/roupas'
     | '/sobre'
     | '/trocas-e-devolucoes'
     | '/produto/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/acessorios'
-    | '/bolsas'
     | '/calcados'
     | '/carrinho'
     | '/checkout'
@@ -228,15 +196,12 @@ export interface FileRouteTypes {
     | '/masculino'
     | '/ofertas'
     | '/politica-de-privacidade'
-    | '/roupas'
     | '/sobre'
     | '/trocas-e-devolucoes'
     | '/produto/$slug'
   id:
     | '__root__'
     | '/'
-    | '/acessorios'
-    | '/bolsas'
     | '/calcados'
     | '/carrinho'
     | '/checkout'
@@ -249,7 +214,6 @@ export interface FileRouteTypes {
     | '/masculino'
     | '/ofertas'
     | '/politica-de-privacidade'
-    | '/roupas'
     | '/sobre'
     | '/trocas-e-devolucoes'
     | '/produto/$slug'
@@ -257,8 +221,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AcessoriosRoute: typeof AcessoriosRoute
-  BolsasRoute: typeof BolsasRoute
   CalcadosRoute: typeof CalcadosRoute
   CarrinhoRoute: typeof CarrinhoRoute
   CheckoutRoute: typeof CheckoutRoute
@@ -271,7 +233,6 @@ export interface RootRouteChildren {
   MasculinoRoute: typeof MasculinoRoute
   OfertasRoute: typeof OfertasRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
-  RoupasRoute: typeof RoupasRoute
   SobreRoute: typeof SobreRoute
   TrocasEDevolucoesRoute: typeof TrocasEDevolucoesRoute
   ProdutoSlugRoute: typeof ProdutoSlugRoute
@@ -284,20 +245,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/acessorios': {
-      id: '/acessorios'
-      path: '/acessorios'
-      fullPath: '/acessorios'
-      preLoaderRoute: typeof AcessoriosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bolsas': {
-      id: '/bolsas'
-      path: '/bolsas'
-      fullPath: '/bolsas'
-      preLoaderRoute: typeof BolsasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calcados': {
@@ -384,13 +331,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/roupas': {
-      id: '/roupas'
-      path: '/roupas'
-      fullPath: '/roupas'
-      preLoaderRoute: typeof RoupasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -417,8 +357,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AcessoriosRoute: AcessoriosRoute,
-  BolsasRoute: BolsasRoute,
   CalcadosRoute: CalcadosRoute,
   CarrinhoRoute: CarrinhoRoute,
   CheckoutRoute: CheckoutRoute,
@@ -431,7 +369,6 @@ const rootRouteChildren: RootRouteChildren = {
   MasculinoRoute: MasculinoRoute,
   OfertasRoute: OfertasRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
-  RoupasRoute: RoupasRoute,
   SobreRoute: SobreRoute,
   TrocasEDevolucoesRoute: TrocasEDevolucoesRoute,
   ProdutoSlugRoute: ProdutoSlugRoute,
