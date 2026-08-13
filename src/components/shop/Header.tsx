@@ -10,8 +10,8 @@ import { Container } from "./ui";
 const NAV = [
   { label: "Feminino", to: "/feminino" },
   { label: "Masculino", to: "/masculino" },
-  { label: "Calçados", to: "/calcados" },
-  { label: "Ofertas", to: "/ofertas" },
+  { label: "Infantil", to: "/infantil" },
+  { label: "Lançamentos", to: "/loja" },
 ] as const;
 
 export function Header() {
