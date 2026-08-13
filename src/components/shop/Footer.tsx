@@ -4,7 +4,7 @@ import { STORE_INFO, waMessages, whatsappLink } from "@/lib/shop/whatsapp";
 import { Logo } from "./Logo";
 import { Container } from "./ui";
 
-const COLUMNS: { title: string; links: { label: string; to: LinkProps["to"] }[] }[] = [
+const COLUMNS: { title: string; links: { label: string; to: NonNullable<LinkProps["to"]> }[] }[] = [
   {
     title: "Invictos",
     links: [
