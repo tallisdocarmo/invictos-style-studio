@@ -8,9 +8,10 @@
 
 export type CategorySlug =
   | "calcados"
-  | "bolsas"
-  | "roupas"
-  | "acessorios";
+  | "masculino"
+  | "feminino"
+  | "infantil"
+  | "lancamentos";
 
 export type Gender = "feminino" | "masculino" | "unissex";
 
